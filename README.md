@@ -1,4 +1,4 @@
-# Stroke-Prediction-Web-App
+# Stroke Prediction Web App
 
 **The app was created using:**
 - Frontend: **HTML** & **CSS**
