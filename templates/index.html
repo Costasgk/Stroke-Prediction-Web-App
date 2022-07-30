@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Model</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+    * {
+        font-family: 'Cabin', sans-serif;
+    }
+
+    .ml-container {
+        margin-left: 30%;
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    button {
+        width: 50%;
+        background-color: #61a9fa;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #4f88c9;
+    }
+
+    input[type=text],
+    input[type=number],
+    select {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .form-items-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .form-master-container {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2 class='container-heading'><span class="heading_font">Stroke Prediction</span></h2>
+    </div>
+    <div class="form-master-container">
+        <div class="ml-container">
+            <form action="/prediction" method="POST">
+                <br>
+                <br>
+                <div class="form-items-container">
+                    <h3>Gender</h3>
+                    <select id="first" class="form-input align-center" name="gender">
+                        <!-- <option value="">Select Gender</option> -->
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                    <br>
+                    <h3>Age</h3>
+                    <input id="second" type="number" name="age" placeholder="in Year" required="required">
+                    <br>
+                    <h3>Hyper Tension</h3>
+                    <input id="third" type="number" name="hypertension" placeholder="Yes = 1, No=0" required="required">
+                    <br>
+                    <h3>Heart Disease</h3>
+                    <input id="fourth" type="number" name="heart_disease" placeholder="Yes = 1, No=0"
+                        required="required">
+                    <br>
+                    <h3>Marriage Status</h3>
+                    <input id="fifth" type="number" name="ever_married" placeholder="Yes = 1, No=0" required="required">
+                    <br>
+                    <h3>Residence Type</h3>
+                    <input id="sixth" type="number" name="Residence_type" placeholder="Rural = 1, Urban = 0"
+                        required="required">
+                    <br>
+                    <h3>Average Glucose Level</h3>
+                    <input id="seventh" type="number" name="avg_glucose_level" placeholder="in Blood"
+                        required="required">
+                    <br>
+                    <h3>BMI</h3>
+                    <input id="eight" type="number" name="bmi" placeholder="Body Mass Index" required="required">
+                    <br>
+                    <h3>Work Type</h3>
+                    <select id="ninth" class="form-input align-center" name="work_type">
+                        <option value="0">Private</option>
+                        <option value="1">Self Employed</option>
+                        <option value="2">Govt Job</option>
+                        <option value="3">Children</option>
+                        <option value="4">Never Worked</option>
+                    </select>
+                    <br>
+                    <h3>Smoking Status</h3>
+                    <select id="tenth" class="form-input align-center" name="smoking_status">
+                        <option value="0">Formerly Smokes</option>
+                        <option value="1">Never Smokes</option>
+                        <option value="2">Smokes</option>
+                        <option value="3">Unknown</option>
+                    </select>
+                </div>
+                <br>
+                <br>
+                <br>
+                <button id="sub" type="submit ">Submit</button>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h2 id="front-message" style="padding-left: 17%; text-transform: uppercase;">
+                    {{prediction}}
+                </h2>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
